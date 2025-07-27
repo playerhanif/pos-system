@@ -1,0 +1,133 @@
+import type { MenuItem, Category, Order } from "./types"
+
+export const categories: Category[] = [
+  { id: "bar", name: "Bar", icon: "🍺" },
+  { id: "food", name: "Food", icon: "🍽️" },
+  { id: "wine", name: "Wine", icon: "🍷" },
+  { id: "coffee", name: "Coffee", icon: "☕" },
+  { id: "pizzas", name: "Pizzas", icon: "🍕" },
+  { id: "ice", name: "Ice", icon: "🧊" },
+]
+
+export const menuItems: MenuItem[] = [
+  {
+    id: "1",
+    name: "Super Delicious Pizza",
+    price: 12.0,
+    image: "/placeholder.svg?height=120&width=120&text=🍕",
+    category: "pizzas",
+    description: "Delicious pizza with fresh ingredients",
+  },
+  {
+    id: "2",
+    name: "Super Delicious Chicken",
+    price: 15.0,
+    image: "/placeholder.svg?height=120&width=120&text=🍗",
+    category: "food",
+    description: "Grilled chicken with herbs",
+  },
+  {
+    id: "3",
+    name: "Super Delicious Burger",
+    price: 10.0,
+    image: "/placeholder.svg?height=120&width=120&text=🍔",
+    category: "food",
+    description: "Juicy beef burger with fries",
+  },
+  {
+    id: "4",
+    name: "Super Delicious Chips",
+    price: 6.0,
+    image: "/placeholder.svg?height=120&width=120&text=🍟",
+    category: "food",
+    description: "Crispy golden fries",
+  },
+  {
+    id: "5",
+    name: "Cheese Selection",
+    price: 12.0,
+    image: "/placeholder.svg?height=120&width=120&text=🧀",
+    category: "food",
+    description: "Artisan cheese platter",
+  },
+  {
+    id: "6",
+    name: "Meat Balls",
+    price: 12.0,
+    image: "/placeholder.svg?height=120&width=120&text=🍖",
+    category: "food",
+    description: "Homemade meatballs in sauce",
+  },
+  {
+    id: "7",
+    name: "Almond Crusted Salmon",
+    price: 21.0,
+    image: "/placeholder.svg?height=120&width=120&text=🐟",
+    category: "food",
+    description: "Fresh salmon with almond crust",
+  },
+]
+
+export const mockOrders: Order[] = [
+  {
+    id: "ORD-001",
+    customerName: "Johnson Mitchell",
+    items: [
+      { id: "1", menuItem: menuItems[4], quantity: 1 },
+      { id: "2", menuItem: menuItems[5], quantity: 1 },
+      { id: "3", menuItem: menuItems[6], quantity: 1 },
+    ],
+    subtotal: 45.0,
+    tax: 0.5,
+    serviceCharge: 0.0,
+    discount: 0.0,
+    total: 45.5,
+    status: "pending",
+    createdAt: new Date("2024-01-15T14:30:00"),
+  },
+  {
+    id: "ORD-002",
+    customerName: "Alice Johnson",
+    items: [
+      { id: "4", menuItem: menuItems[0], quantity: 2 },
+      { id: "5", menuItem: menuItems[2], quantity: 1 },
+    ],
+    subtotal: 34.0,
+    tax: 0.34,
+    serviceCharge: 0.0,
+    discount: 0.0,
+    total: 34.34,
+    status: "completed",
+    createdAt: new Date("2024-01-15T13:15:00"),
+  },
+  {
+    id: "ORD-003",
+    customerName: "Bob Smith",
+    items: [
+      { id: "6", menuItem: menuItems[1], quantity: 1 },
+      { id: "7", menuItem: menuItems[3], quantity: 2 },
+    ],
+    subtotal: 27.0,
+    tax: 0.27,
+    serviceCharge: 0.0,
+    discount: 0.0,
+    total: 27.27,
+    status: "preparing",
+    createdAt: new Date("2024-01-15T12:45:00"),
+  },
+  {
+    id: "ORD-004",
+    customerName: "Carol Davis",
+    items: [
+      { id: "8", menuItem: menuItems[6], quantity: 1 },
+      { id: "9", menuItem: menuItems[0], quantity: 1 },
+    ],
+    subtotal: 33.0,
+    tax: 0.33,
+    serviceCharge: 0.0,
+    discount: 0.0,
+    total: 33.33,
+    status: "ready",
+    createdAt: new Date("2024-01-15T11:20:00"),
+  },
+]
